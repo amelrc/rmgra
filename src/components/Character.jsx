@@ -5,7 +5,7 @@ class Character extends Component {
 
 
 	render() { 
-		const { id, img, name, status, location } = this.props
+		const { id, img, name, status, location, episode } = this.props
 
 		return (
 			<Cards>
@@ -22,6 +22,10 @@ class Character extends Component {
 				<div className='dimension info'>
 					<p>last dimension:</p>
 					<p>{location.name}</p>
+				</div>
+				<div className='episode info'>
+					<p>last episode:</p>
+					<p>{episode.name}</p>
 				</div>
 			</Cards>	
 		);
