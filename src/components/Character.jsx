@@ -2,30 +2,52 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 class Character extends Component {
-
-
 	render() { 
-		const { id, img, name, status, location, episode } = this.props
+		const { on, onClick, id, img, name, status, location, episode, species, gender, origin } = this.props;
 
 		return (
 			<Cards>
-				<ImageContainer>
-					<img src={img} alt={id}/>
-					<h2 className='name'>{name}</h2>
-				</ImageContainer>
-				<div >
-					<div className='info'>
-						<p>status:</p>
-						<p>{status}</p>
+				<div>
+					<img className='image' src={img} alt={id}/>
+				</div>
+				<div className='wrapper'>
+						<h2 className='name'>{name}</h2>
+					<div>
+						<div className='info border'>
+							<p className='heading'>status:</p>
+							<p className='response'>{status}</p>
+						</div>
+						<div className='info border'>
+							<p className='heading'>species:</p>
+							<p className='response'>{species}</p>
+						</div>
+						<div className='info border'>
+							<p className='heading'>gender:</p>
+							<p className='response'>{gender}</p>
+						</div>
+						<div className='info border'>
+							<p className='heading'>origin:</p>
+							<p className='response'>{origin}</p>
+						</div>
 					</div>
-				</div>
-				<div className='dimension info'>
-					<p>last dimension:</p>
-					<p>{location.name}</p>
-				</div>
-				<div className='episode info'>
-					<p>last episode:</p>
-					<p>{episode.name}</p>
+					<div className='dimension info border'>
+						<p className='heading'>last dimension:</p>
+						<p className='response'>{location.name}</p>
+					</div>
+					<div className='info border'>
+						<p className='heading'>last episode:</p>
+					</div>
+					<div className='episode'>
+							<div className='info'>
+								<p className='heading'>name:</p>
+								<p className='response'>{episode.name}</p>
+							</div>
+							<div className='info border'>
+								<p className='heading'>number:</p>
+								<p className='response'>{episode.episode}</p>
+							</div>
+						</div>
+
 				</div>
 			</Cards>	
 		);
@@ -34,36 +56,43 @@ class Character extends Component {
  
 export default Character;
 
-
 const Cards = styled.div`
-background-color: var(--lightBrown);
+background-color: var(--gray);
 width: fit-content;
 margin: 10px;
+border-radius: 10px;
+box-shadow: 10px 10px 4px -6px rgba(0, 214, 158, 0.42);
+display: flex;
+flex-direction: column;
 	.info {
 		display: flex;
 		justify-content: space-between;
 		margin: 0 10px;
 	}
-	.col-1 {
-		grid-column-start: 1;
-		margin: 0;
-	}
-	.col-2 {
-		margin: 0;
-	}
-
-`
-const ImageContainer = styled.div`
-position: relative;
-height: 300px;
-justify-content: center;
-display: flex;
-    .name {
-        position: absolute;
-		bottom: 3px;
-		background-color: var(--gray);
-		padding: 0 10px;
-		color: white;
+	.name {
 		text-align: center;
-    }
+	}
+	.wrapper {
+		width: 270px;
+		align-self:center;
+	}
+	.response {
+		text-align: end;
+	}
+	.border {
+		border-top: solid 1px var(--darkBlue);
+	}
+	.episode {
+		background-color: var(--darkerGray);
+		margin-bottom: 10px;
+		border-radius: 5px;
+	}
+	.arrow {
+		align-items: center;
+		display: flex;
+	}
+	.hidden {
+		display: none;
+	}
+	
 `

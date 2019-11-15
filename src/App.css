@@ -27,9 +27,30 @@
 }
 
 :root {
-  --yellow: #faed26;
-  --purple: #46344e;
-  --gray: #5a5560;
-  --lightBrown: #9d8d8f;
-  --darkBrown: #9b786f;
+  --green: #00d69e;
+  --darkBlue: #1e3064;
+  --gray: #e8e8e8;
+  --darkerGray: #b1b1b1;
+}
+
+.heading {
+  text-transform: uppercase;
+  font-size: 0.7em;
+  align-self: center;
+  width: 20%;
+  color: var(--darkBlue);
+  font-weight: bold;
+}
+.image {
+  border-radius: 10px 10px 0 0;
+}
+
+.fas {
+  justify-content: center;
+  display: flex;
+  margin: 10px;
+}
+
+.title {
+  text-align: center;
 }
