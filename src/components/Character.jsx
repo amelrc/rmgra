@@ -2,16 +2,28 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 class Character extends Component {
-	render() { 
-		const { on, onClick, id, img, name, status, location, episode, species, gender, origin } = this.props;
+	render() {
+		const {
+			on,
+			onClick,
+			id,
+			img,
+			name,
+			status,
+			location,
+			episode,
+			species,
+			gender,
+			origin
+		} = this.props;
 
 		return (
 			<Cards>
 				<div>
-					<img className='image' src={img} alt={id}/>
+					<img className='image' src={img} alt={id} />
 				</div>
 				<div className='wrapper'>
-						<h2 className='name'>{name}</h2>
+					<h2 className='name'>{name}</h2>
 					<div>
 						<div className='info border'>
 							<p className='heading'>status:</p>
@@ -38,32 +50,31 @@ class Character extends Component {
 						<p className='heading'>last episode:</p>
 					</div>
 					<div className='episode'>
-							<div className='info'>
-								<p className='heading'>name:</p>
-								<p className='response'>{episode.name}</p>
-							</div>
-							<div className='info border'>
-								<p className='heading'>number:</p>
-								<p className='response'>{episode.episode}</p>
-							</div>
+						<div className='info'>
+							<p className='heading'>name:</p>
+							<p className='response'>{episode.name}</p>
 						</div>
-
+						<div className='info border'>
+							<p className='heading'>number:</p>
+							<p className='response'>{episode.episode}</p>
+						</div>
+					</div>
 				</div>
-			</Cards>	
+			</Cards>
 		);
 	}
 }
- 
+
 export default Character;
 
 const Cards = styled.div`
-background-color: var(--gray);
-width: fit-content;
-margin: 10px;
-border-radius: 10px;
-box-shadow: 10px 10px 4px -6px rgba(0, 214, 158, 0.42);
-display: flex;
-flex-direction: column;
+	background-color: var(--gray);
+	width: fit-content;
+	margin: 10px;
+	border-radius: 10px;
+	box-shadow: 10px 10px 4px -6px rgba(0, 214, 158, 0.42);
+	display: flex;
+	flex-direction: column;
 	.info {
 		display: flex;
 		justify-content: space-between;
@@ -74,7 +85,7 @@ flex-direction: column;
 	}
 	.wrapper {
 		width: 270px;
-		align-self:center;
+		align-self: center;
 	}
 	.response {
 		text-align: end;
@@ -94,5 +105,4 @@ flex-direction: column;
 	.hidden {
 		display: none;
 	}
-	
-`
+`;
