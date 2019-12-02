@@ -4,8 +4,6 @@ import styled from 'styled-components';
 class Character extends Component {
 	render() {
 		const {
-			on,
-			onClick,
 			id,
 			img,
 			name,
@@ -75,34 +73,4 @@ const Cards = styled.div`
 	box-shadow: 10px 10px 4px -6px rgba(0, 214, 158, 0.42);
 	display: flex;
 	flex-direction: column;
-	.info {
-		display: flex;
-		justify-content: space-between;
-		margin: 0 10px;
-	}
-	.name {
-		text-align: center;
-	}
-	.wrapper {
-		width: 270px;
-		align-self: center;
-	}
-	.response {
-		text-align: end;
-	}
-	.border {
-		border-top: solid 1px var(--darkBlue);
-	}
-	.episode {
-		background-color: var(--darkerGray);
-		margin-bottom: 10px;
-		border-radius: 5px;
-	}
-	.arrow {
-		align-items: center;
-		display: flex;
-	}
-	.hidden {
-		display: none;
-	}
 `;

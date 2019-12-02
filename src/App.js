@@ -17,8 +17,8 @@ class App extends React.Component {
 	}
 
 	getCharactersAndLocations = () => {
-		const charactersPromise = this.getCharacters(); //returns an array
-		const locationsPromise = this.getLocations(); //returns an array
+		const charactersPromise = this.getCharacters();
+		const locationsPromise = this.getLocations();
 
 		Promise.all([charactersPromise, locationsPromise]).then(values => {
 			this.setState({
@@ -65,7 +65,7 @@ class App extends React.Component {
 	};
 
 	getCharacters = () => {
-		return fetch('https://rickandmortyapi.com/api/character/?page=1')
+		return fetch('https://rickandmortyapi.com/api/character')
 			.then(result => result.json())
 			.then(json => json.results);
 	};
@@ -86,7 +86,10 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<Title title={'Rick and Morty'} subTitle={'challenge'} />
+				<Title
+					title={'Rick and Morty API'}
+					subTitle={'did you ever want to hold a terry fold?'}
+				/>
 				<Container>
 					{this.state.characters.map((char, index) => (
 						<Character
